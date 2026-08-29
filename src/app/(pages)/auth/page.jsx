@@ -87,7 +87,7 @@ export default function AuthPage() {
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) {
-            router.replace("/home");
+            router.replace("/dashboard");
         }
     }, [router]);
 
@@ -139,7 +139,7 @@ export default function AuthPage() {
 
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", JSON.stringify(data.user));
-            router.replace("/home");
+            router.replace("/dashboard");
         } catch (err) {
             console.error(err);
             setError("Network error. Try again.");
